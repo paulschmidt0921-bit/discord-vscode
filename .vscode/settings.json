@@ -1,52 +1,93 @@
 {
-	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-	"eslint.useESLintClass": true,
-	"eslint.useFlatConfig": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.organizeImports": "never",
-		"source.fixAll.eslint": "always",
-		"source.fixAll": "always"
-	},
-	"editor.trimAutoWhitespace": false,
-	"files.associations": {
-		"tsconfig.json": "jsonc",
-		"tsconfig.eslint.json": "jsonc"
-	},
-	"files.insertFinalNewline": true,
-	"files.eol": "\n",
-	"search.exclude": {
-		"**/.yarn": true,
-		"**/.next": true,
-		"**/dist": true,
-		"**/coverage": true,
-		"**/test-results": true
-	},
-	"search.followSymlinks": false,
-	"search.useParentIgnoreFiles": true,
-	"files.watcherExclude": {
-		"**/.next/*/**": true,
-		"**/.yarn/*/**": true,
-		"**/coverage/*/**": true,
-		"**/dist/*/**": true,
-		"**/test-results/*/**": true
-	},
-	"unocss.disable": true,
-	"npm.packageManager": "pnpm",
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"tailwindCSS.experimental.classRegex": [
-		["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]?([^\"'`]+)[\"'`]?"],
-		["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-		["class:\\s*?[\"'`]([^\"'`]*).*?,"]
-	],
-	"workbench.editor.customLabels.patterns": {
-		"**/app/**/page.tsx": "${dirname} (${filename}.${extname}) - Page",
-		"**/app/**/layout.tsx": "${dirname} (${filename}.${extname}) - Layout",
-		"**/app/**/template.tsx": "${dirname} (${filename}.${extname}) - Template",
-		"**/app/**/error.tsx": "${dirname} (${filename}.${extname}) - Error",
-		"**/app/**/not-found.tsx": "${dirname} (${filename}.${extname}) - Not Found",
-		"**/components/**/page.tsx": "${dirname} (${filename}.${extname}) - Component"
-	}
+    // ESLint soll diese Dateitypen prüfen
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+    // Verwende die ESLint-Klasse
+    "eslint.useESLintClass": true,
+
+    // Verwende die flache ESLint-Konfiguration
+    "eslint.useFlatConfig": true,
+
+    // Standard-Formatter auf Prettier setzen
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // Automatisches Formatieren beim Speichern
+    "editor.formatOnSave": true,
+
+    // Aktionen beim Speichern
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",       // Keine Importe automatisch sortieren
+        "source.fixAll.eslint": "always",        // Alle ESLint-Probleme automatisch beheben
+        "source.fixAll": "always"                // Alle fixbaren Probleme automatisch beheben
+    },
+
+    // Keine automatischen Leerzeichen am Zeilenende entfernen
+    "editor.trimAutoWhitespace": false,
+
+    // Dateizuordnungen
+    "files.associations": {
+        "tsconfig.json": "jsonc",               // tsconfig-Dateien als JSONC behandeln
+        "tsconfig.eslint.json": "jsonc"
+    },
+
+    // Neue Zeile am Ende der Datei einfügen
+    "files.insertFinalNewline": true,
+
+    // Zeilenumbruch auf Unix-Stil (\n) setzen
+    "files.eol": "\n",
+
+    // Ordner/Dateien von der Suche ausschließen
+    "search.exclude": {
+        "**/.yarn": true,
+        "**/.next": true,
+        "**/dist": true,
+        "**/coverage": true,
+        "**/test-results": true
+    },
+
+    // Symlinks bei der Suche nicht folgen
+    "search.followSymlinks": false,
+
+    // Ignoriere Eltern-Ignore-Dateien bei der Suche
+    "search.useParentIgnoreFiles": true,
+
+    // Dateien, die vom Watcher ignoriert werden sollen
+    "files.watcherExclude": {
+        "**/.next/*/**": true,
+        "**/.yarn/*/**": true,
+        "**/coverage/*/**": true,
+        "**/dist/*/**": true,
+        "**/test-results/*/**": true
+    },
+
+    // Unocss deaktivieren
+    "unocss.disable": true,
+
+    // Paketmanager auf pnpm setzen
+    "npm.packageManager": "pnpm",
+
+    // TypeScript SDK Pfad
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+
+    // TailwindCSS experimentelle Klassenerkennung
+    "tailwindCSS.experimental.classRegex": [
+        ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]?([^\"'`]+)[\"'`]?"],
+        ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+        ["class:\\s*?[\"'`]([^\"'`]*).*?,"]
+    ],
+
+    // Benutzerdefinierte Labels für Editor-Tabs (jetzt auf Deutsch)
+    "workbench.editor.customLabels.patterns": {
+        "**/app/**/page.tsx": "${dirname} (${filename}.${extname}) - Seite",
+        "**/app/**/layout.tsx": "${dirname} (${filename}.${extname}) - Layout",
+        "**/app/**/template.tsx": "${dirname} (${filename}.${extname}) - Vorlage",
+        "**/app/**/error.tsx": "${dirname} (${filename}.${extname}) - Fehler",
+        "**/app/**/not-found.tsx": "${dirname} (${filename}.${extname}) - Nicht gefunden",
+        "**/components/**/page.tsx": "${dirname} (${filename}.${extname}) - Komponente"
+    },
+
+    // Discord Rich Presence für aktives Bearbeiten
+    "discord.detailsEditing": "Bearbeite {file_name} — Zeile {current_line}/{total_lines}",
+    "discord.lowerDetailsEditing": "Zeile {current_line}/{total_lines} • {workspace}"
 }

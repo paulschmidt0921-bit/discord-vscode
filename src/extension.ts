@@ -159,8 +159,9 @@ export async function activate(context: ExtensionContext) {
 			} else {
 				// eslint-disable-next-line no-restricted-globals
 				idle = setTimeout(async () => {
-					state = {};
-					await rpc.user?.clearActivity();
+					// Update presence to an idle state but preserve the startTimestamp
+					// so elapsed time continues to be tracked while VS Code is in background.
+					await sendActivity();
 				}, config[CONFIG_KEYS.IdleTimeout] * 1_000);
 			}
 		}
