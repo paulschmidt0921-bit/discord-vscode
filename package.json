@@ -106,7 +106,17 @@
 			},
 			{
 				"command": "discord.disconnect",
-				"title": "Disconnect Discord Presence from Discord",
+				"title": "Discord: Disconnect Presence",
+				"category": "Discord Presence"
+			},
+			{
+				"command": "discord.openPlaytimeTerminal",
+				"title": "Discord: Open Playtime Terminal",
+				"category": "Discord Presence"
+			},
+			{
+				"command": "discord.setPlayTime",
+				"title": "Discord: Set Playtime",
 				"category": "Discord Presence"
 			}
 		],
